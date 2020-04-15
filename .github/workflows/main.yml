@@ -17,6 +17,7 @@ jobs:
             username: ${{ secrets.DOCKER_USERNAME }}
             password: ${{ secrets.DOCKER_PASSWORD }}
             repository: oase/jennybot
+            tags: latest
             tag_with_ref: true
             add_git_labels: true
             push: ${{ startsWith(github.ref, 'refs/tags/') }}
