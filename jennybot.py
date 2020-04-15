@@ -12,7 +12,8 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 
 def handle_voice_note(update: Update, context: CallbackContext):
-    if (update.effective_user.id == context.bot_data['jenny_id']):
+    if (update.effective_user.id in context.bot_data['jenny_ids']
+        or context.bot_data['everyone_is_jenny']):
         context.bot.send_sticker(update.message.chat_id, context.bot_data['sticker_id'], disable_notification=True, reply_to_message_id=update.message.message_id)
 
 def error(update, context):
@@ -34,8 +35,9 @@ def main():
     dispatcher = updater.dispatcher
 
     dispatcher.bot_data = {
-        'jenny_id': int(config['JennyBot']['JennyId']),
-        'sticker_id': config['JennyBot']['StickerId']
+        'jenny_ids': [int(x) for x in config['JennyBot']['JennyIds'].split(",")],
+        'sticker_id': config['JennyBot']['StickerId'],
+        'everyone_is_jenny': config['JennyBot'].get('EveryoneIsJenny', 'no') == 'yes'
     }
 
     dispatcher.add_handler(MessageHandler(Filters.voice, handle_voice_note))

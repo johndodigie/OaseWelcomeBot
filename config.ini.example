@@ -1,4 +1,5 @@
 [JennyBot]
 TelegramToken = <Bot token>
-JennyId = <Jennys ID>
+JennyIds = <Comma-separated list of the IDs of Jennys>
+EveryoneIsJenny = (yes/no)
 StickerId = <Sticker to reply>
