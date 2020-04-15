@@ -1,0 +1,4 @@
+[JennyBot]
+TelegramToken = <Bot token>
+JennyId = <Jennys ID>
+StickerId = <Sticker to reply>
