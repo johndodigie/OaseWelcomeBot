@@ -1,5 +1,2 @@
-[JennyBot]
+[OaseWelcomeBot]
 TelegramToken = <Bot token>
-JennyIds = <Comma-separated list of the IDs of Jennys>
-EveryoneIsJenny = (yes/no)
-StickerId = <Sticker to reply>

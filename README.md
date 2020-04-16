@@ -1,3 +1,1 @@
-# JennyBot
-
-Jennys eigener Bot! Sowas hat wirklich nicht jeder.
+WelcomeBot für die NosTeraWohlfühlOase
